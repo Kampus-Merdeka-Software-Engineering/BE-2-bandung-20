@@ -47,9 +47,10 @@ async function getList(req, res) {
     }
 }
 
-app.get('/', req, res => {
-    res.send('server work!!');
-})
+app.get('/', (req, res) => {
+    res.send('Server Work!!!');
+});
+
 app.post("/list",  createList)
 app.get("/list", getList);
 
