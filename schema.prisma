@@ -1,0 +1,14 @@
+datasource db {
+  provider = "mysql" // Use the appropriate database provider
+  url      = env("DATABASE_URL") // Use your actual database connection URL
+}
+
+model list {
+  id      Int      @id @default(autoincrement())
+  name    String
+  email   String
+  phone   String
+  people  String
+  time    String
+  date    String
+}
