@@ -1,4 +1,3 @@
-const { time } = require('console');
 const express = require('express');
 const cors = require('cors');
 const { PrismaClient } = require('@prisma/client')
@@ -20,10 +19,11 @@ async function createList(req, res) {
             name, email, phone, people, time, date
         },
       });
+      const data = req.body;
       res.status(201).send({
         success: true,
         message: "sukses dalam menambahkan data",
-        data: createdList, // Use createdList instead of createList
+        data: createdList
       });
     } catch (error) {
       console.error(error);
