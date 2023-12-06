@@ -1,3 +1,7 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
 datasource db {
   provider = "mysql" // Use the appropriate database provider
   url      = env("DATABASE_URL") // Use your actual database connection URL
