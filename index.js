@@ -15,7 +15,7 @@ app.use(express.json());
 async function createList(req, res) {
     const { name, email, phone, people, time, date } = req.body;
     try {
-      await prisma.list.create({
+      const createdList = await prisma.list.create({
         data: {
             name, email, phone, people, time, date
         },
@@ -23,8 +23,8 @@ async function createList(req, res) {
       res.status(201).send({
         success: true,
         message: "sukses dalam menambahkan data",
-        data: createList,
-	});
+        data: createdList, // Use createdList instead of createList
+      });
     } catch (error) {
       console.error(error);
       res.status(500).json({
